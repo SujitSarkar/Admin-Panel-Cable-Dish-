@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "1013560863648",
+    "firebase_url": "https://dip-dish-69d16.firebaseio.com",
+    "project_id": "dip-dish-69d16",
+    "storage_bucket": "dip-dish-69d16.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1013560863648:android:2d1d2572d5cbb9a51912c5",
+        "android_client_info": {
+          "package_name": "com.glamworlditltd.dipdish"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1013560863648-o325j8sljdakm5ql6s34kf1a3h243u67.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.glamworlditltd.dipdish",
+            "certificate_hash": "064b34ddbe7b6403a2f617bff9c8365c23cc57e0"
+          }
+        },
+        {
+          "client_id": "1013560863648-pphtr91km3me52802eca79fp7baolfq3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBl4Qk58oaC_Dpq9MIl-AaOiihm11vRz-c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1013560863648-pphtr91km3me52802eca79fp7baolfq3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
