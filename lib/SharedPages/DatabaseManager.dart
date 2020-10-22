@@ -72,4 +72,23 @@ class DatabaseManager {
       return null;
     }
   }
+
+  Future geComplainList() async {
+    final CollectionReference complainList =
+    Firestore.instance.collection("ComplainList");
+    List problems = [];
+    try {
+      await complainList
+          .getDocuments()
+          .then((querySnapshot) {
+        querySnapshot.documents.forEach((element) {
+          problems.add(element.data);
+        });
+      });
+      return problems;
+    } catch (e) {
+      print(e.toString());
+      return null;
+    }
+  }
 }

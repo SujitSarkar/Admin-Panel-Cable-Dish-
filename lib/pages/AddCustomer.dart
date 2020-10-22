@@ -18,6 +18,7 @@ class _AddNewCustomerState extends State<AddNewCustomer> {
   String address = '';
   String nid = '';
   String state = "বিল বকেয়া";
+  String lastPaid;
 
   final List<String> items = ["বিল বকেয়া", "বিল পরিশোধ"];
 
@@ -209,26 +210,26 @@ class _AddNewCustomerState extends State<AddNewCustomer> {
   }
 
   Future saveCustomerToDatabase() async {
+    String entryDate = DateTime.now().millisecondsSinceEpoch.toString();
     String temp;
     if (state == "বিল পরিশোধ") {
       temp = "paid";
+      lastPaid = entryDate;
     } else {
       temp = "unpaid";
     }
 
-    String entryDate = DateTime.now().millisecondsSinceEpoch.toString();
+
     Firestore.instance.collection("Customer").document(mobile).setData({
       "name": name,
       "mobile": mobile,
       "address": address,
-      "NID": "nid",
+      "NID": nid,
       "state": temp,
       "entryDate": entryDate,
-    }).then((value) {
-      Firestore.instance.collection("UserInfo").document(mobile).setData({
-        "mobile": mobile,
-        "password": "1234",
-      }).then((value) async {
+      "password": "1234",
+      "last paid": lastPaid,
+    }).then((value) async {
         this.setState(() => isLoading = false);
         Fluttertoast.showToast(msg: "তথ্য সংরক্ষন সম্পন্ন হয়েছে");
         Navigator.of(context).pop();
@@ -236,6 +237,5 @@ class _AddNewCustomerState extends State<AddNewCustomer> {
         setState(() => isLoading = false);
         Fluttertoast.showToast(msg: errorMgs.toString());
       });
-    });
   }
 }
